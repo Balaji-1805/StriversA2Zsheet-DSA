@@ -5,23 +5,12 @@ public class Pattern11 {
         for(int i=0;i<n;i++)
         {
             int num=1;
-            int arr[]=new int[i+1];
-            for(int k=0;k<arr.length;k++)
-            {
-                if(num==1)
-                {
-                    arr[k]=1;
-                    num=0;
-                }
-                else
-                {
-                    arr[k]=0;
-                    num=1;
-                }
-            }
+            if(i%2==0) num=1;
+            else num=0;
             for(int j=0;j<=i;j++)
             {
-                System.out.print(arr[i-j]);
+                System.out.print(num);
+                num=1-num;
             }
             System.out.println();
         }
