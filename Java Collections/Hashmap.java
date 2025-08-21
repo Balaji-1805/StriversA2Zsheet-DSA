@@ -20,11 +20,6 @@ class Hashmap
         studentData.remove("B1");
         System.out.println(studentData);
         System.out.println(studentData.containsKey("B1"));
-        
-        
-        
-
-
-
+        sc.close();
     }
 }
