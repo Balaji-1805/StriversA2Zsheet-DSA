@@ -15,16 +15,16 @@ public class BubbleSort {
                 }
             }
         }
-        for(int num:arr)
-        {
-            System.out.print(num+" ");
-        }
     }
     public static void main(String[] args) {
-        int arr[]={7,5,9,2,8,4,3,1,6};
+        int arr[]={1,2,3,6,5};
         System.out.println("Array:");
         for(int num:arr)System.out.print(num+" ");
         System.out.println("\nBubble Sort:");
         bubbleSort(arr);
+        for(int num:arr)
+        {
+            System.out.print(num+" ");
+        }
     }
 }
