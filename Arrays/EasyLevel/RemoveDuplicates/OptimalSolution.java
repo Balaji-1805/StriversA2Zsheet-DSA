@@ -6,12 +6,12 @@ class OptimalSolution
     {
         int n=arr.length;
         int i=0;
-        for(int j=1;j<n-1;j++)
+        for(int j=1;j<n;j++)
         {
-            if(arr[j]!=arr[j+1])
+            if(arr[i]!=arr[j])
             {
                 i+=1;
-                arr[i]=arr[j+1];
+                arr[i]=arr[j];
             }
         }
         return i+1;
