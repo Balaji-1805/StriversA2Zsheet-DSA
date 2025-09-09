@@ -8,34 +8,40 @@ public class OptimalSolution {
         int m=arr1.length;
         int n=arr2.length;
         int i=0,j=0;
+        int lastAdded=Integer.MIN_VALUE;
         while(i<m&&j<n)
         {
-            if(arr1[i]<arr2[j]&&!newArr.contains(arr1[i]))
+            if(arr1[i]<arr2[j]&&lastAdded!=arr1[i])
             {
                 newArr.add(arr1[i]);
+                lastAdded=arr1[i];
                 i++;
             }
-            else if(arr1[i]==arr2[j]&&!newArr.contains(arr1[i]))
+            else if(arr1[i]==arr2[j]&&lastAdded!=arr1[i])
             {
                 newArr.add(arr1[i]);
+                lastAdded=arr1[i];
                 i++;
                 j++;
             }
             else 
             {
-                if(!newArr.contains(arr2[j]))
+                if(lastAdded!=arr2[j])
                 newArr.add(arr2[j]);
+                lastAdded=arr2[j];
                 j++;
             }
         }
-        while(i<m&&!newArr.contains(arr1[i]))
+        while(i<m&&lastAdded!=arr1[i])
         {
             newArr.add(arr1[i]);
+            lastAdded=arr1[i];
             i++;
         }
-        while(j<n&&!newArr.contains(arr2[j]))
+        while(j<n&&lastAdded!=arr2[j])
         {
             newArr.add(arr2[j]);
+            lastAdded=arr2[j];
             j++;
         }
         return newArr;
